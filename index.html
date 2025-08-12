@@ -1,157 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ferret's Corner</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    // Scroll animation observer
-    document.addEventListener('DOMContentLoaded', function() {
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
 
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, observerOptions);
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollowcraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet">
+    <script>
+      // Scroll animation observer
+      document.addEventListener('DOMContentLoaded', function () {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
 
-      // Observe all elements with animation classes
-      const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
-      animatedElements.forEach(el => observer.observe(el));
-    });
-  </script>
-</head>
-<body>
-<img src="banner.png" width="100%">
-<p class="intro"><i>Legends say the interwebs are still recovering...</i></p>
-<div class="buttons-88x31 fade-in">
-  <img src="88x31/html5.png" alt="HTML5">
-  <img src="88x31/any_browser_at.gif" alt="Any Browser">
-  <img src="88x31/anythingbut.gif" alt="Anything But Internet Explorer">
-  <img src="88x31/get_a_computer.jpg" alt="Get A Computer">
-  <img src="88x31/i_like_computer.png" alt="I Like Computer">
-  <img src="88x31/madewithneo.gif" alt="Made with Neocities">
-  <img src="88x31/discord.gif" alt="Discord">
-  <img src="88x31/apple.gif" alt="Apple">
-  <img src="88x31/imac.gif" alt="iMac">
-  <img src="88x31/home-assistant.gif" alt="Home Assistant">
-  <img src="88x31/ia.gif" alt="Internet Archive">
-  <img src="88x31/fftake.gif" alt="Firefox">
-  <a href="https://dimden.dev/"><img src="https://dimden.dev/images/88x31.gif"></a>
-  <a href="http://openbooks.neocities.org"><img src="https://openbooks.neocities.org/img/88x31.gif" height="31" width="88" style="image-rendering:pixelated;"/></a> 
-  <img src="https://openbooks.neocities.org/img/macbutton.gif" alt="Mac Button">
-  <img src="https://openbooks.neocities.org/img/codebutton.gif">
-  <img src="https://openbooks.neocities.org/img/srgb-now.png">
-  <img src="https://openbooks.neocities.org/img/neocitiesbutton.gif">
-  <img src="88x31/the-largest-88x31-collection-2.png">
-  <img src="88x31.png">
-</div>
-<div class="nav fade-in fade-in-delay-1">
-  <a href="#about">About</a> | 
-  <a href="#blog">Blog</a> | 
-  <a href="#music">Music</a> | 
-  <a href="#photos">Photos</a> | 
-  <a href="#projects">Projects</a> |
-  <a href="#pixelart">Pixel Art</a>
-</div>
-<div class="social fade-in fade-in-delay-2">
-  <a href="https://bsky.app/profile/ferret.nekoweb.org">Bluesky</a> | 
-  <a href="https://youtube.com/@Ferretosan">YouTube</a> | 
-  <a href="https://discord.com/channels/@ferretosan">Discord</a> | 
-  <a href="https://github.com/ferretosan">GitHub</a> | 
-  <a href="https://namemc.com">nameMC</a>
-</div>
-<h2 id="about" class="slide-in-left">About me!</h2>
-<div class="fade-in">
-<p>Hi! I'm Ferretosan (aka Ferret). Welcome to my corner of the .. 1NT3RWEBZ!!</p>
-<p>This site is pretty basic, ikik - it's not meant to be some CSS showcase.</p>
-<p>I'm that one kid in class that everyone goes to for tech support, and is consequently accused of being a "hacker" after using Hacker Typer...</p>
-<p>I'm also a Minecraft player, and I am the Lead Manager on the brand-new Hollowcraft kitpvp server.</p>
-<p>I'm a breakcore enthusiast, and make some of it myself! (That's in the music section...)</p>
-</div>
-<div class="fade-in fade-in-delay-1">
-<script>
-  // Override location for webring scripts
-  Object.defineProperty(window, 'location', {
-    value: {
-      ...window.location,
-      hostname: 'ferretosan.neocities.org',
-      href: 'https://ferretosan.neocities.org' + window.location.pathname,
-      origin: 'https://ferretosan.neocities.org',
-      host: 'ferretosan.neocities.org'
-    },
-    writable: false
-  });
-</script>
-<div id="ckwr">
-  <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
-  <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
-  <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/widget.css">
-</div>
-<div id='gfdkris'>
-  <script type="text/javascript" src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"></script>
-  <script type="text/javascript" src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"></script>
-</div>
-</div>
-<h2 id="blog" class="slide-in-right">Blog</h2>
-<div class="fade-in">
-<p>I just switched to Bear for blog posts, and it's so, so much easier! Anyways, here's the links:</p>
-</div>
-<ul class="fade-in fade-in-delay-1">
-  <a href="https://ferretosan.bearblog.dev/why-i-use-aseprite/"><li>12/8/2025: Why I use Aseprite</li></a>
-    <a href="https://ferretosan.bearblog.dev/chromebooks/"><li>14/6/2025: Chromebooks</li></a>
-  <a href="https://ferretosan.bearblog.dev/minecraft-java-vs-bedrock/"><li>16/10/2024: Java or Bedrock</li></a>
-</ul>
-<h2 id="music" class="slide-in-left">Music</h2>
-<div class="fade-in">
-<p>Yes, I make music. Is it a shocking fact? Idk, but I basically make electronica/breakcore music stuff. For now, the links will just take you to their respective pages on <a href="https://ferretosan.bandcamp.com">Bandcamp</a>.</p>
-</div>
-<div class="album-grid scale-in">
-  <img src="albums/criminalthoughts-cover.jpg" alt="Criminal Thoughts">
-  <img src="albums/actual-cover.jpg" alt="Actual (In Progress)">
-  <img src="albums/blip-cover.jpg" alt="Blip">
-  <img src="albums/again-cover.jpg" alt="Again">
-  <img src="albums/economix-cover.png" alt="Economix">
-</div>
-<h2 id="photos" class="slide-in-right">Photos</h2>
-<div class="fade-in">
-<p>Here are some lovely photos I've taken, mostly landscapes, and nature closeups.</p>
-</div>
-<div class="photo-grid scale-in">
-  <img src="https://images.unsplash.com/photo-1754117327970-0f5f18ee60db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 1">
-  <img src="https://images.unsplash.com/photo-1754117327868-78b91d769feb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 1">
-  <img src="https://images.unsplash.com/photo-1754117327872-8807da2cd2e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 2">
-  <img src="https://images.unsplash.com/photo-1754117327837-8df229306c45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 2">
-  <img src="https://images.unsplash.com/photo-1752471975264-fbf893ed34bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NXx8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 3">
-  <img src="https://images.unsplash.com/photo-1752471983011-34cbee92f4f2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 3">
-  <img src="https://images.unsplash.com/photo-1752471970410-5a50e4271c0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Nnx8fGVufDB8fHx8fA%3D%3D" alt="Landscape Photo 4">
-  <img src="https://images.unsplash.com/photo-1752471962833-919e4d8e7096?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OHx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 4">
-  <img src="https://images.unsplash.com/photo-1728593592362-95e2a8d05af8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="Landscape Photo 5">
-  <img src="https://images.unsplash.com/photo-1749343812120-1e49adb8ad29?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" alt="Nature Photo 5">
-  <img src="https://images.unsplash.com/photo-1728345340972-47a0cf9651b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTJ8fHxlbnwwfHx8fHw%3D" alt="Landscape Photo 6">
-  <img src="https://images.unsplash.com/photo-1728442958655-001424ea9391?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTF8fHxlbnwwfHx8fHw%3D" alt="Nature Photo 6">
-</div>
-<h2 id="projects" class="slide-in-left">Projects</h2>
-<div class="fade-in">
-<p>This is basically all my good GitHub repos, so yea...</p>
-</div>
-<ul class="fade-in fade-in-delay-1">
-  <a href="https://github.com/ferretosan/flipper-badkb"><li>flipper-badkb</li></a>
-  <a href="https://github.com/ferretosan/purpley"><li>purpley for vscode</li></a>
-  <a href="https://github.com/ferretosan/web"><li>ferretosan/web</li></a>
-</ul>
-<h2 id="photos" class="slide-in-right">Pixel Art</h2>
-<div class="fade-in">
-<p>I like pixel art. I wrote a blog post about it! Anywways, here's some of my art!</p>
-</div>
-<div class="photo-grid scale-in">
-  <img src="https://picsum.photos/200">
-</div>
-</body>
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+        animatedElements.forEach(el => observer.observe(el));
+      });
+    </script>
+  </head>
+
+  <body>
+    <img src="banner.png" width="100%">
+    <p class="intro">play.hollowcraft.org</p>
+    <div class="nav fade-in fade-in-delay-1">
+      <a href="#about">About</a> |
+      <a href="#screenshots">Screenshots</a>
+    </div>
+    <div class="social fade-in fade-in-delay-2">
+      <a href="https://bsky.app/profile/hollowcraft.org">Bluesky</a> |
+      <a href="https://youtube.com/@HollowcraftYT">YouTube</a> |
+      <a href="https://discord.gg/Re2qQZH6Px">Discord</a> |
+      <a href="https://github.com/hollowcraftdev">GitHub</a>
+    </div>
+    <h2 id="about" class="slide-in-left">About Hollowcraft</h2>
+    <div class="fade-in">
+      <p>Hollowcraft is a Minecraft server that offers a unique and engaging gameplay experience. Our community is dedicated to providing a fun and inclusive environment for players of all skill levels.</p>
+    </div>
+    <h2 id="screenshots" class="slide-in-right">Screenshots</h2>
+    <div class="fade-in">
+      <p>Here are some lovely screenshots of Hollowcraft!</p>
+    </div>
+    <div class="photo-grid scale-in">
+      <img src="https://picsum.photos/200/300?random=1" alt="Random Photo 1">
+      <img src="https://picsum.photos/200/300?random=2" alt="Random Photo 2">
+      <img src="https://picsum.photos/200/300?random=3" alt="Random Photo 3">
+      <img src="https://picsum.photos/200/300?random=4" alt="Random Photo 4">
+    </div>
+  </body>
+
 </html>
