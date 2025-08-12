@@ -34,7 +34,73 @@
         // Observe all elements with animation classes
         const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
         animatedElements.forEach(el => observer.observe(el));
+
+        // Server status checker
+        checkServerStatus();
+        // Check every 30 seconds
+        setInterval(checkServerStatus, 30000);
       });
+
+      async function checkServerStatus() {
+        try {
+          const response = await fetch('https://mcapi.us/server/status?ip=play.hollowcraft.org');
+          const data = await response.json();
+          
+          const statusDot = document.getElementById('server-status-dot');
+          const statusText = document.getElementById('server-status-text');
+          const playerCounter = document.getElementById('player-counter');
+          const maxPlayers = document.getElementById('max-players');
+          
+          if (data.status === 'success' && data.online) {
+            // Server is online
+            statusDot.className = 'status-dot online';
+            statusText.textContent = 'Server Online';
+            
+            // Animate player count
+            const currentCount = parseInt(playerCounter.textContent) || 0;
+            const newCount = data.players.now;
+            maxPlayers.textContent = data.players.max;
+            
+            animatePlayerCount(currentCount, newCount, playerCounter);
+          } else {
+            // Server is offline
+            statusDot.className = 'status-dot offline';
+            statusText.textContent = 'Server Offline';
+            playerCounter.textContent = '0';
+            maxPlayers.textContent = '20';
+          }
+        } catch (error) {
+          // Error fetching data
+          console.error('Error checking server status:', error);
+          const statusDot = document.getElementById('server-status-dot');
+          const statusText = document.getElementById('server-status-text');
+          statusDot.className = 'status-dot error';
+          statusText.textContent = 'Connection Error';
+        }
+      }
+
+      function animatePlayerCount(from, to, element) {
+        const duration = 1000; // 1 second
+        const startTime = performance.now();
+        const difference = to - from;
+        
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          // Easing function for smooth animation
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(from + (difference * easeProgress));
+          
+          element.textContent = current;
+          
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        
+        requestAnimationFrame(update);
+      }
     </script>
   </head>
 
@@ -50,6 +116,17 @@
       <a href="https://youtube.com/@HollowcraftYT">YouTube</a> |
       <a href="https://discord.gg/Re2qQZH6Px">Discord</a> |
       <a href="https://github.com/hollowcraftdev">GitHub</a>
+    </div>
+    <div class="server-status fade-in fade-in-delay-3">
+      <div class="status-indicator">
+        <span id="server-status-dot" class="status-dot offline"></span>
+        <span id="server-status-text">Checking server...</span>
+      </div>
+      <div class="player-count">
+        <span class="player-label">Players Online:</span>
+        <span id="player-counter" class="player-number">0</span>
+        <span class="player-max">/ <span id="max-players">20</span></span>
+      </div>
     </div>
     <h2 id="about" class="slide-in-left">About Hollowcraft</h2>
     <div class="fade-in">
